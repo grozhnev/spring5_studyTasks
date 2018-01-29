@@ -7,13 +7,14 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.Arrays;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 class HelloWorldTest {
 
-    private static final String APPLICATION_CONTEXT_XML_FILE_NAME =
-            "application-context.xml";
+    private static final String APPLICATION_CONTEXT_XML_FILE_NAME ="ioc.xml";//"application-context.xml";
 
     private BeanFactory context =
             new ClassPathXmlApplicationContext(APPLICATION_CONTEXT_XML_FILE_NAME);
@@ -28,10 +29,14 @@ class HelloWorldTest {
         return new UsualPerson()
                 .setAge(35)
                 .setName("John Smith")
+                .setProgrammer(true)
                 .setCountry(new Country()
                         .setId(1)
                         .setName("Russia")
-                        .setCodeName("RU"));
+                        .setCodeName("RU"))
+                .setHeight(1.78f)
+                .setContacts(Arrays.asList("asd@asd.ru", "+7-234-456-67-89"));
+
     }
 }
 
