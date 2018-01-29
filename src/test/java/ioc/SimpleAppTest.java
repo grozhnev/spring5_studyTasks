@@ -33,3 +33,4 @@ class SimpleAppTest {
 		assertEquals(expectedPerson, person);
 	}
 }
+
